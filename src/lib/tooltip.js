@@ -545,7 +545,9 @@ export default class Tooltip {
 			if (this._isOpen === false) {
 				return
 			}
-			if (!document.body.contains(this._tooltipNode)) {
+
+      const container = this._findContainer(options.container, this._tooltipNode)
+			if (!container.contains(this._tooltipNode)) {
 				return
 			}
 
